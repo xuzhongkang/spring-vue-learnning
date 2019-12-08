@@ -18,13 +18,11 @@ public class SysUser {
     @GeneratedValue
     private Integer id;
 
-    @NotNull(message = "用户名不能为空")
     @Size(min = 6 , max = 18, message = "用户名应设为6至18位")
     @Column(unique = true,nullable = false)
     private String name;
 
     @Column(nullable = false)
-    @NotNull(message = "密码不能为空")
     @Size(min = 6 , max = 18, message = "密码应设为6至18位")
     private String password;
 

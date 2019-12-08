@@ -45,7 +45,7 @@ public class SysUserController {
     /**
      * .在实体前添加 @Valid 注解代表要对这个实体进行验证，如果验证不通过就会报异常
      * bindingResult是对异常信息的包装，不过这里我们不用，而是交由异常处理器进行处理
-     * @return 注册成功会将注册信息返回（！因为是demo所以没有考虑安全性）
+     * @return user
      */
     @RequestMapping("/register")
     public RestResult register(@Valid SysUser user, BindingResult bindingResult) {
@@ -57,11 +57,10 @@ public class SysUserController {
      * @return 登陆成功则返回相关信息，否则返回错误提示
      */
     @RequestMapping(value = "/login",method = RequestMethod.POST)
-    public RestResult login(@NotNull(message = "用户名不能为空") String name,@NotNull(message = "密码不能为空") String password, HttpSession session) {
+    public RestResult login(String name,String password) {
+        System.out.println("name:"+name+";password:"+password);
         SysUser user = userService.checkLogin(name, password);
         if(user != null) {
-            //储存到session中
-            session.setAttribute("user",user);
             return generator.getSuccessResult("登陆成功",user);
         }
         return generator.getFailResult("用户名/密码错误");

@@ -11,7 +11,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
   jpa: # set jpa
     database: MYSQL # specify ths DBMS
-    show-sql: true # show or not log for each sql query
+    show-sql: false # show or not log for each sql query
     hibernate:
       naming: # naming strategy
         strategy: org.hibernate.cfg.ImprovedNamingStrategy
