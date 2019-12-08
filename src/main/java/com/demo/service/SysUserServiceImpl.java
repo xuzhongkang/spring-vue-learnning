@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * 用户服务层实现类
- * Created by xuzhongknag on 2019/12/07.
+ * @author  xuzhongknag on 2019/12/07.
  */
 @Service("SysUserService")
 public class SysUserServiceImpl implements SysUserService{

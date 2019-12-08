@@ -4,7 +4,7 @@ import com.demo.entity.SysUser;
 
 /**
  * 用户服务层接口
- * Created by xuzhongknag on 2019/12/07
+ * @author xuzhongknag on 2019/12/07
  */
 public interface SysUserService {
     /**

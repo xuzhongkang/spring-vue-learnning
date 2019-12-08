@@ -9,25 +9,24 @@ import javax.validation.constraints.Size;
 
 /**
  * 用户表实体类
- * Entity 代表这是实体类，要交给Hibernate管理
  * 。 @Size @NotNull 都是validation框架的注解
- * Created by xuzhongknag on 2019/12/07.
+ * @author xuzhongknag on 2019/12/07.
  */
 @Entity
 public class SysUser {
     @Id
     @GeneratedValue
-    private Integer id; //主键 自增
+    private Integer id;
 
     @NotNull(message = "用户名不能为空")
     @Size(min = 6 , max = 18, message = "用户名应设为6至18位")
     @Column(unique = true,nullable = false)
-    private String name; //唯一 非空
+    private String name;
 
     @Column(nullable = false)
     @NotNull(message = "密码不能为空")
     @Size(min = 6 , max = 18, message = "密码应设为6至18位")
-    private String password; //非空
+    private String password;
 
     public Integer getId() {
         return id;

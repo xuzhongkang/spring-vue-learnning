@@ -1,16 +1,12 @@
 package com.demo.entity;
 
 /**
- * 统一封装API返回信息
- * 千万别加@Entity 否则Hibernate会给你创建表
- * Created by xuzhongknag on 2019/12/07
+ * 此对象统一封装API返回信息
+ * @author xuzhongknag on 2019/12/07
  */
 public class RestResult {
-    //状态码
     private int code;
-    //消息
     private String message;
-    //额外的内容
     private Object data;
 
     public RestResult(){

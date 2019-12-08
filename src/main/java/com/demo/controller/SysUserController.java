@@ -24,7 +24,7 @@ import javax.validation.constraints.NotNull;
  * 用户控制层
  * . @RestController 该类下所有返回值默认以json格式进行返回
  * . @Validated 代表该类启用参数验证，通过添加注解可以验证参数
- * Created by xuzhongknag on 2019/12/07.
+ * @author xuzhongknag on 2019/12/07.
  */
 @RestController
 @RequestMapping("/user")
@@ -43,7 +43,6 @@ public class SysUserController {
     }
 
     /**
-     * 匹配 /user/register 地址
      * .在实体前添加 @Valid 注解代表要对这个实体进行验证，如果验证不通过就会报异常
      * bindingResult是对异常信息的包装，不过这里我们不用，而是交由异常处理器进行处理
      * @return 注册成功会将注册信息返回（！因为是demo所以没有考虑安全性）
@@ -54,7 +53,6 @@ public class SysUserController {
     }
 
     /**
-     * 匹配 /user/login 地址 ,限定POST方法
      * 。@NotNull 在字段前添加注解代表验证该字段，如果为空则报异常
      * @return 登陆成功则返回相关信息，否则返回错误提示
      */
@@ -79,11 +77,11 @@ public class SysUserController {
     }
 
     /**
-     * 主键/唯一约束违反异常
+     * 用户名重复
      */
     @ExceptionHandler(DataIntegrityViolationException.class)
     public RestResult handleDataIntegrityViolationException(DataIntegrityViolationException exception) {
         //如果注册两个相同的用户名到报这个异常
-        return generator.getFailResult("违反主键/唯一约束条件");
+        return generator.getFailResult("用户名重复");
     }
 }

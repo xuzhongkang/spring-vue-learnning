@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 /**
  * 接口信息生成工具
  * 。@Component 添加到Spring组件中
- * Created by xuzhongknag on 2019/12/07.
+ * @author xuzhongknag on 2019/12/07.
  */
 @Component
 public class ResultGenerator {

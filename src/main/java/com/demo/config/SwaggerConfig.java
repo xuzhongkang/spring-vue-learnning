@@ -25,15 +25,14 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.bestlink.wechat.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("Jeffrey.Liu")
-                .description("企业微信接口微服务")
+                .title("前后端分离--后端借口")
+                .description("前后端分离--后端借口")
                 .version("1.0.0")
                 .build();
     }
