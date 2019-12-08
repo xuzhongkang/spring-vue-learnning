@@ -23,7 +23,7 @@ spring:
 
   # Thymeleaf view template config
   # disable cache for dev
-  # 配置和此项目无关，主要为设置thymeleaf 不严格检查HTML5
+  # 配置和此项目无关，主要为设置thymeleaf
   thymeleaf:
     cache: false
     encoding: UTF-8
