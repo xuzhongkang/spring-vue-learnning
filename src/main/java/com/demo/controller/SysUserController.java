@@ -74,7 +74,6 @@ public class SysUserController {
      */
     @ExceptionHandler(ConstraintViolationException.class)
     public RestResult handleConstraintViolationException(ConstraintViolationException cve) {
-        //这里简化处理了，cve.getConstraintViolations 会得到所有错误信息的迭代，可以酌情处理
         String errorMessage = cve.getConstraintViolations().iterator().next().getMessage();
         return generator.getFailResult(errorMessage);
     }
