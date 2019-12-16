@@ -37,7 +37,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		<!-- 可以实现热部署，在IDEA上实现热部署还需一些额外的配置，请查阅资料 -->
+		<!-- 可以实现热部署，在IDEA上实现热部署还需一些额外的配置-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -54,12 +54,13 @@
 			<artifactId>springfox-swagger-ui</artifactId>
 			<version>${swagger.version}</version>
 		</dependency>
-		<!-- JDBC for mysql -->
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<scope>runtime</scope>
+			<version>8.0.13</version>
 		</dependency>
+
 		<!-- 测试框架 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
