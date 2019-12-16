@@ -13,10 +13,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.ConstraintViolationException;
 import javax.validation.Valid;
 
 /**
@@ -58,6 +60,16 @@ public class SysUserController {
             return generator.getSuccessResult("登陆成功", user);
         }
         return generator.getFailResult("用户名/密码错误");
+    }
+
+    /**
+     * 为参数验证添加异常处理器
+     */
+    @ExceptionHandler(ConstraintViolationException.class)
+    public RestResult handleConstraintViolationException(ConstraintViolationException cve) {
+        String errorMessage = cve.getConstraintViolations().iterator().next().getMessage();
+        System.out.println(errorMessage);
+        return generator.getFailResult(errorMessage);
     }
 
     //todo 用户增删改查
