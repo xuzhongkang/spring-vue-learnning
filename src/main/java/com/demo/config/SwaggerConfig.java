@@ -31,8 +31,8 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("前后端分离--后端借口")
-                .description("前后端分离--后端借口")
+                .title("前后端分离--后端接口")
+                .description("前后端分离--后端接口")
                 .version("1.0.0")
                 .build();
     }
