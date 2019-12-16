@@ -31,8 +31,8 @@ import javax.validation.Valid;
 @RequestMapping("/user")
 @Validated
 public class SysUserController {
-    private Logger log = LoggerFactory.getLogger(this.getClass());
 
+    private Logger log = LoggerFactory.getLogger(this.getClass());
     @Autowired
     private SysUserService userService;
     @Autowired
@@ -44,7 +44,6 @@ public class SysUserController {
     public RestResult register(@Valid SysUser user, BindingResult bindingResult) {
         return generator.getSuccessResult("用户注册成功", userService.saveUser(user));
     }
-
 
     @ApiOperation(httpMethod = "GET", value = "用户登录接口")
     @ApiImplicitParams({
@@ -61,4 +60,5 @@ public class SysUserController {
         return generator.getFailResult("用户名/密码错误");
     }
 
+    //todo 用户增删改查
 }

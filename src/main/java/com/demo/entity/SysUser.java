@@ -9,7 +9,7 @@ import javax.validation.constraints.Size;
 
 /**
  * 用户表实体类
- * 。 @Size @NotNull 都是validation框架的注解
+ * .@Size @NotNull 都是validation框架的注解
  * @author xuzhongknag on 2019/12/07.
  */
 @Entity

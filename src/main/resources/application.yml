@@ -4,26 +4,25 @@ server:
   context-path: / # 项目启动地址为 localhost:8888/
 
 spring:
-  datasource: # set database config
-    url: jdbc:mysql://localhost:3306/mysql?useUnicode=true&characterEncoding=utf8&useSSL=false
+  datasource:
+    #serverTimezone=GMT%2B8解决时区问题
+    url: jdbc:mysql://localhost:3306/mysql?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8
     username: root
     password: 123456
     driver-class-name: com.mysql.jdbc.Driver
-  jpa: # set jpa
-    database: MYSQL # specify ths DBMS
-    show-sql: false # show or not log for each sql query
+  jpa:
+    database: MYSQL
+    show-sql: false
     hibernate:
-      naming: # naming strategy
+      naming:
         strategy: org.hibernate.cfg.ImprovedNamingStrategy
     properties:
-      hibernate: # stripped before adding them to entity manager
+      hibernate:
         dialect: org.hibernate.dialect.MySQL5Dialect
-  aop: #设置aop,aop依赖添加后默认是启用的
+  aop:
     proxy-target-class: true
 
-  # Thymeleaf view template config
-  # disable cache for dev
-  # 配置和此项目无关，主要为设置thymeleaf
+# thymeleaf设置
   thymeleaf:
     cache: false
     encoding: UTF-8
