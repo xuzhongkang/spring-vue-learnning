@@ -1,37 +1,43 @@
 package com.demo.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
+import javax.persistence.*;
 import javax.validation.constraints.Size;
 
 /**
  * 用户表实体类
- * .@Size @NotNull 都是validation框架的注解
+ * .@Size @NotNull 都是validation的注解
+ *
  * @author xuzhongknag on 2019/12/07.
  */
 @Entity
 public class SysUser {
-    @Id
-    @GeneratedValue
-    private Integer id;
 
-    @Size(min = 6 , max = 18, message = "用户名应设为6至18位")
-    @Column(unique = true,nullable = false)
+
+    @Size(min = 4, max = 18, message = "用户名应设为4至18位")
+    @Column(unique = true, nullable = false)
     private String name;
 
-    @Column(nullable = false)
-    @Size(min = 6 , max = 18, message = "密码应设为6至18位")
     private String password;
 
-    public Integer getId() {
-        return id;
+    @Id
+    private Integer no;
+
+    private String email;
+
+    public Integer getNo() {
+        return no;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setNo(Integer no) {
+        this.no = no;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getName() {
